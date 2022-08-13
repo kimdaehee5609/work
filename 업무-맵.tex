@@ -1,0 +1,512 @@
+%	-------------------------------------------------------------------------------
+% 
+%
+%		업무
+%
+%		2022년
+%		8월
+%		14일
+%		일요일
+%		첫작성
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+	\documentclass[12pt, a3paper, landscape, oneside]{book}
+%	\documentclass[12pt, a4paper, oneside]{book}
+%	\documentclass[12pt, a4paper, landscape, oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+%		\geometry{landscape=true	}
+		\geometry{top 		=10em}
+		\geometry{bottom		=10em}
+		\geometry{left		=8em}
+		\geometry{right		=8em}
+		\geometry{headheight	=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)
+
+
+
+		%	===================================================================
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}					% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한글 하이퍼링크 사용
+
+		% ------------------------------ 수학 수식
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+			\usepackage{mathtools}				% amsmath 확장판
+
+
+
+		% ------------------------------ 
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+			\usepackage{tabularx}			%
+			\usepackage{tabu}				%
+
+
+
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	toc 설정  - table of contents
+		% 	
+		% 	
+		% 	----------------------------------------------------------------  문서 기본 사항 설정
+			\setcounter{secnumdepth}{5} 		% 문단 번호 깊이
+			\setcounter{tocdepth}{3} 			% 문단 번호 깊이 - 목차 출력시 출력 범위
+
+			\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+
+
+		%	--------------------------------------------------------------------------------------- 
+		% 	mini toc 설정
+		% 	
+		% 	
+		% 	--------------------------------------------------------- 장의 목차  minitoc package
+			\usepackage{minitoc}
+
+			\setcounter{minitocdepth}{1}    	%  Show until subsubsections in minitoc
+%			\setlength{\mtcindent}{12pt} 	% default 24pt
+			\setlength{\mtcindent}{24pt} 	% default 24pt
+
+		% 	--------------------------------------------------------- part toc
+		%	\setcounter{parttocdepth}{2} 	%  default
+			\setcounter{parttocdepth}{0}
+		%	\setlength{\ptcindent}{0em}		%  default  목차 내용 들여 쓰기
+			\setlength{\ptcindent}{0em}         
+
+
+		% 	--------------------------------------------------------- section toc
+
+			\renewcommand{\ptcfont}{\normalsize\rm} 		%  default
+			\renewcommand{\ptcCfont}{\normalsize\bf} 	%  default
+			\renewcommand{\ptcSfont}{\normalsize\rm} 	%  default
+
+
+		%	=======================================================================================
+		% 	tocloft package
+		% 	
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\usepackage{tocloft}
+
+		% 	------------------------------------------ 목차의 내어쓰기 즉 왼쪽 마진 설정
+			\setlength{\cftsecindent}{2em}			%  section
+
+		% 	------------------------------------------ 목차의 목차 번호와 목차 사이의 간격 조정
+			\setlength{\cftsecnumwidth}{2em}		%  section
+
+
+
+
+		%	=======================================================================================
+		% 	tikz package
+		% 	
+		% 	--------------------------------- 	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			\usetikzlibrary{mindmap}			
+
+
+
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+			\dominitoc
+			\doparttoc			
+
+
+
+
+			\title{사성제 }
+			\maketitle
+
+
+			\tableofcontents 		% 목차 출력
+%			\listoffigures 			% 그림 목차 출력
+			\cleardoublepage
+			\listoftables 			% 표 목차 출력
+
+
+
+% 	==============================================================================  chapter  Flow chart
+	\clearpage	
+	\section{바른 삼매}
+	\pagestyle{empty}
+
+		%	----------------------------------------------- mind map
+		% 	하향 5개
+		%	----------------------------------------------- mind map
+		\begin{center}
+		\tikz[	mindmap,
+%				minimum size=3cm,
+				text width=6em, 
+				concept color=black!80,
+				level 1/.style={level distance=5.5cm,sibling angle=90},  %찰나삼매
+				level 2/.style={level distance=4.0cm,sibling angle=30},  %삼매 설명
+				level 3/.style={level distance=4.0cm,sibling angle=40},  %색계선정
+%				level 4/.style={level distance=5.0cm,sibling angle=30},  %색계초선
+%				level 5/.style={level distance=5.0cm,sibling angle=30},
+%				every annotation/.style={text width=20em, align=left}]
+				concept/.append style={fill={none}} 
+				]
+				\node 	[concept] 				{바름 삼매}
+						[clockwise from=00, every concept/.style={minimum size=3cm}]
+				child	{					node[concept] 	{찰나 삼매}
+						[clockwise from=-90]
+						child	{		node [annotation] {특정한 대상에만 집중하는 것이 아니라 현재 일어나는  대상에 순간 순간 집중하는 삼매를 말한다 }
+							}
+					}
+				child	{	node[concept] 	{근접 삼매}
+						[clockwise from=-90]
+						child	{		node [annotation] {몰입 삼매에 들러가기 직전이나 직후의 마음 상태를 말한다}
+							}
+					}
+				child	{				node[concept] 	{몰입 삼매}
+									[clockwise from=180]
+						child	{		node [annotation] {오직 하나의 대상만을 기억하여 알아차림으로써 마음이 하나의 대상에 완전히 몰입된 삼매를 말한다 }
+							}
+%									[clockwise from=45]
+							child	{	node[concept] 	{색계선정}
+%									[clockwise from=90]
+%							child		[grow=45, level distance=8.0cm ]{ node[concept] {초기 균열	}}  
+%							child		[grow=25, level distance=8.0cm ]{ node[concept] {침하수축균열	}}    
+%							child		[grow=00, level distance=8.0cm ]{ node[concept] {소성수축균열	}}   
+%							child		[grow=-25, level distance=8.0cm ]{ node[concept] {침하균열	}} 
+%							child		[level distance=8.0cm ]{ node[concept] {초기 균열	}}  
+%							child		[level distance=8.0cm ]{ node[concept] {침하수축균열	}}    
+%							child		[level distance=8.0cm ]{ node[concept] {소성수축균열	}}   
+%							child		[level distance=8.0cm ]{ node[concept] {침하균열	}} 
+							child		{ node[concept] {색계 초선}}  
+							child		{ node[concept] {색계 이선}}    
+							child		{ node[concept] {색계 삼선}}   
+							child		{ node[concept] {색계 사선}} 
+%							child		{ node {색계 초선}}  
+%							child		{ node {색계 이선}}    
+%							child		{ node {색계 삼선}}   
+%							child		{ node {색계 사선}} 
+								}
+%									[clockwise from=-45]
+							child	{	node[concept] 	{무색계선정}
+%									[clockwise from=45]
+%							child		[grow=45, level distance=8.0cm ]{ node[concept] {초기 균열	}}  
+%							child		[grow=25, level distance=8.0cm ]{ node[concept] {침하수축균열	}}    
+%							child		[grow=00, level distance=8.0cm ]{ node[concept] {소성수축균열	}}   
+%							child		[grow=-25, level distance=8.0cm ]{ node[concept] {침하균열	}} 
+%							child		[level distance=8.0cm ]{ node[concept] {초기 균열	}}  
+%							child		[level distance=8.0cm ]{ node[concept] {침하수축균열	}}    
+%							child		[level distance=8.0cm ]{ node[concept] {소성수축균열	}}   
+%							child		[level distance=8.0cm ]{ node[concept] {침하균열	}} 
+							child		{ node[concept] {공무변처}}  
+							child		{ node[concept] {식무변처}}    
+							child		{ node[concept] {무소변처}}   
+							child		{ node[concept] {비상비비상처}} 
+								}
+					};
+		\end{center}
+
+% 	==============================================================================  chapter  Flow chart
+%	\clearpage	
+	\section{바른 삼매}
+	\pagestyle{empty}
+
+		%	----------------------------------------------- mind map
+		% 	하향 5개
+		%	----------------------------------------------- mind map
+		\begin{center}
+		\tikz[	mindmap,
+				grow cyclic,
+				text width=6em, 
+				concept color=black!10,
+				level 1/.style={level distance=3.0cm,minimum size=3cm,},
+				level 2/.style={level distance=3.0cm,minimum size=2cm,},
+				level 3/.style={level distance=3.0cm,minimum size=2cm,},
+				level 4/.style={level distance=3.0cm,minimum size=2cm,},
+				concept/.append style={fill={none}} 
+				]
+				\node 	[concept,minimum size=4cm]	{바른 삼매}
+%						[every concept/.style={minimum size=2cm}] 	% 여기서 하부 콥셉의 크기를 지정
+				child	[grow=90, level distance=5.0cm ]	
+				{					node[concept] 	{NAS}
+					child				[grow=45, level distance=5.0cm ]
+					{				node[concept] 	{https://\\quickconnect.to\\/lf0000}
+						child			[grow=0, level distance=4.0cm ]	
+						{			node[concept] 	{h 010\\3839\\5609}
+							child		[grow=0, level distance=4.0cm ]	
+							{		node[concept] 	{!김대희\\38395609}
+							} 
+						} 
+					}
+					child	[grow=0, level distance=4.0cm ]	
+					{				node[concept] 	{guest}
+						child			[grow=0, level distance=4.0cm ]	
+						{			node[concept] 	{lf0000}
+							child		[grow=0, level distance=4.0cm ]	
+							{		node[concept] 	{00 00 00}
+							} 
+						} 
+					} 
+				}
+				child	[grow=-10, level distance=7.0cm ]	
+				{					node[concept] 	{네트워크}
+					child 				[grow=30, level distance=6.0cm ]
+					{				node[concept] 	{색계 선정}
+						child			[grow=00, level distance=4.0cm ]
+						{			node[concept] 	{색계 초선}} 
+						child			[grow=00, level distance=4.0cm ]
+						{			node[concept] 	{색계 초선}} 
+					}
+					child 				[grow=00, level distance=4.0cm ]
+					{				node[concept] 	{무색계 선정}
+						child 			[grow=45, level distance=8.0cm ]{ node[concept] {초기 균열	}}  
+						child 			[grow=25, level distance=8.0cm ]{ node[concept] {침하수축균열	}}    
+						child 			[grow=00, level distance=8.0cm ]{ node[concept] {소성수축균열	}}   
+						child 			[grow=-25, level distance=8.0cm ]{ node[concept] {침하균열	}} 
+					}
+%					child				[grow=-30, level distance=6.0cm ]
+%					{				node[concept] 	{LFNAS}
+%						child			[grow=00, level distance=4.0cm ]
+%						{			node[concept] 	{admin}
+%							child		[grow=00, level distance=4.0cm ]
+%							{		node[concept] 	{lf 0000}} 
+%						} 
+%					}
+				}
+				child	[grow=-90, level distance=7.0cm ]	
+				{					node[concept] 	{web hard}
+				};
+				
+		\end{center}
+
+
+
+% 	==============================================================================  chapter  Flow chart
+	\section{작업중}
+	\pagestyle{empty}
+	
+		\begin{center}
+		\begin{tikzpicture}[	mindmap,
+					    	every node/.style=concept,
+					    	concept color=black!10,
+						concept/.append style={fill={none}},
+						grow cyclic,
+%					    level 1/.append style={level distance=4.0cm,sibling angle=360},
+					    level 1/.append style={level distance=6.0cm},
+					    level 2/.append style={level distance=6.5cm}
+					    level 3/.append style={level distance=6.5cm}
+					    ]
+		  \node 	[root concept] 					{	삼매 } % root
+				[clockwise from=0]
+				%
+			    	child 	[level distance=12cm , grow=0]	{ node {찰나 삼매}
+					[clockwise from=0]
+					child		[level distance=6cm]	{ node {공기량} 
+						child 					{ node {여기가 어디 2} }  
+						child 					{ node {여기가 어디 2} }   
+						child 					{ node {여기가 어디 2} }  }
+					child 		[level distance=6cm]	{ node {재료분리} 
+						child 					{ node {여기가 어디 2} }  
+						child 					{ node {여기가 어디 2} }   
+						child 					{ node {여기가 어디 2} }  } 
+					child 		[level distance=6cm]	{ node {응결} 
+						child 	[grow=00]			{ node {1} }  
+						child 	[grow=30]			{ node {2} }   
+						child 	[grow=60]			{ node {3} }  } 
+					child 		[level distance=6cm]	{ node {균열		} 
+						child 					{ node {초기 균열} 	}  
+						child 					{ node {침하수축균열	} }   
+						child 					{ node {소성수축균열	} }   
+						child 					{ node {침하균열	} } } }
+				%
+			    	child [grow=-90 ]			 	{ node {근접 삼매}
+					[clockwise from=0]
+					child 						{ node {여기가 어디 1} } 
+					child 						{ node {여기가 어디 2} }  }
+				%				
+				child [grow=180]				 	{ node [concept]{몰입 삼매}
+					child 	[grow=90]					{ node [concept]{색계 선정} 
+						child 					{ node [concept]{색계 초선} } 	
+						child 					{ node [concept]{색계 이선} } 	
+						child 					{ node [concept]{색계 삼선} } 	
+						child 					{ node [concept]{색계 사선} } }
+					child 	[grow=-90]			{ node [concept]{무색계 선정} 
+						child 					{ node [concept]{색계 초선} } 	
+						child 					{ node [concept]{색계 이선} } 	
+						child 					{ node [concept]{색계 삼선} } 	
+						child 					{ node [concept]{색계 사선} } } };
+		\end{tikzpicture}
+		\end{center}
+
+
+
+	\clearpage
+
+		\tikz[mindmap,concept color=red!50]
+					\node [concept] 	{Root concept}
+					child[grow=right] 	{node[concept] {Child concept}};
+
+
+		\paragraph{every mindmap style} \hfill \\
+		\tikz[every mindmap,concept color=red!50]
+					\node [concept] 	{Root concept}
+					child[grow=right] 	{node[concept] {Child concept}};
+
+		\paragraph{mindmap style} \hfill \\
+		\tikz[mindmap,concept color=red!50]
+					\node [concept] 	{Root concept}
+					child[grow=right] 	{node[concept] {Child concept}};
+
+		\paragraph{large mindmap style} \hfill \\
+		\tikz[large mindmap,concept color=red!50]
+					\node [concept] 	{Root concept}
+					child[grow=right] 	{node[concept] {Child concept}};
+
+		\paragraph{huge mindmap style} \hfill \\
+		\tikz[huge mindmap,concept color=red!50]
+					\node [concept] 	{Root concept}
+					child[grow=right] 	{node[concept] {Child concept}};
+
+
+	\clearpage
+
+
+		\paragraph{concept} \hfill \\
+		\tikz[mindmap,concept color=red!10] \node [concept] {강도} ;
+		\tikz[mindmap,concept color=red!10] \node [concept] {내구성} ;
+		\tikz[mindmap,concept color=black!10] \node [concept] {수밀성} ;
+		\tikz[mindmap,concept color=black!10] \node [concept] {균열\\저항성} ;
+		\tikz[mindmap,concept color=black!10] \node [concept] {강재\\보호} ;
+
+
+		\paragraph{extra concept} \hfill \\
+		\tikz[mindmap,concept color=red!10] \node [extra concept] {강도} ;
+		\tikz[mindmap,concept color=red!10] \node [extra concept] {강도} ;
+		\tikz[mindmap,concept color=red!10] \node [extra concept] {내구성} ;
+		\tikz[mindmap,concept color=red!10] \node [extra concept] {수밀성} ;
+		\tikz[mindmap,concept color=red!10] \node [extra concept] {균열\\저항성} ;
+		\tikz[mindmap,concept color=red!10] \node [extra concept] {강재\\보호} ;
+
+		\tikz[mindmap,concept color=black!10] \node [extra concept, color=black!10] {강도} ;
+
+
+
+		\paragraph{color} \hfill  \\
+
+		\tikz[mindmap, concept color=black!10, text=red]	%
+				\node [concept] {\Large 강도} 
+				child[concept color=red!5, grow=00] {node[concept] {\Large 강도-1} } ;
+
+
+		\tikz[mindmap, concept color=black!80, text=white]	%
+				\node [concept] {\Large 강도} 
+				child[concept color=black!80, text=white,  grow=00] {node[concept] {강도-1} } ;
+
+
+
+
+
+		\paragraph{concept size} \hfill \\
+		\tikz[mindmap,minimum size=0.5cm, concept color=red!10] 		\node [concept] {강도} ;
+		\tikz[mindmap,minimum size=1cm, concept color=red!10] 		\node [concept] {1cm} ;
+		\tikz[mindmap,minimum size=2cm, concept color=red!10] 		\node [concept] {2cm} ;
+		\tikz[mindmap,minimum size=3cm, concept color=black!10]		\node [concept] {3cm 수밀성} ;
+		\tikz[mindmap,minimum size=4cm, concept color=black!10] 		\node [concept] {4cm 균열\\저항성} ;
+		\tikz[mindmap,minimum size=5cm, concept color=black!10] 		\node [concept] {5cm 강재\\보호} ;
+		\tikz[mindmap,minimum size=4cm, concept color=black!10] 		\node [concept] {\Large 균열\\저항성} ;
+
+		\paragraph{every mindmap size} \hfill \\
+		\tikz[every mindmap,minimum size=0.5cm, concept color=red!10] 	\node [concept] {0.5cm} ;
+		\tikz[every mindmap,minimum size=1cm, concept color=red!10] 		\node [concept] {1cm} ;
+		\tikz[every mindmap,minimum size=2cm, concept color=red!10] 		\node [concept] {2cm} ;
+		\tikz[every mindmap,minimum size=3cm, concept color=black!10]		\node [concept] {수밀성} ;
+		\tikz[every mindmap,minimum size=4cm, concept color=black!10]		\node [concept] {\Large 균열\\저항성} ;
+		\tikz[every mindmap,minimum size=5cm, concept color=black!10]		\node [concept] {강재\\보호} ;
+
+
+
+
+		\paragraph{grow} \hfill  \\
+
+		\tikz[mindmap, concept color=black!10]	%
+				\node [concept] {강도}  child[concept color=red!5, grow=00] {node[concept] {강도-1} } ;
+
+		\tikz[mindmap, concept color=black!10]	%
+				\node [concept] {강도} 	child[concept color=red!5, grow=000] {node[concept] {강도-1} }
+									child[concept color=red!5, grow=030] {node[concept] {강도-2} }
+									child[concept color=red!5, grow=060] {node[concept] {강도-3} }
+									child[concept color=red!5, grow=090] {node[concept] {강도-4} }
+									child[concept color=red!5, grow=120] {node[concept] {강도-5} };
+
+
+
+
+
+
+
+
+
+		\begin{tikzpicture}[	mindmap,
+					    every node/.style=concept,
+					    concept color=black!20,
+					    grow cyclic,
+					    level 1/.append style={level distance=4.0cm,sibling angle=90},
+					    level 2/.append style={level distance=4.5cm,sibling angle=45}
+					    ]
+		  \node [root concept] 
+			{	최고의 가치 } % root
+				%
+			    	child [concept color=black!10] 	%
+										{ node {일}
+				child 						{ node {여기가 어디 1} } 
+				child 						{ node {여기가 어디 2} }  }
+				%
+				child [concept color=blue!10] 	{ node {직장}
+				child 						{ node {Turing Machines} }
+				child 						{ node {Random-Access Machines} }
+				child 						{ node {Random-Access Machines} }
+				child 						{ node {Random-Access Machines} }  }
+				%				
+				child [concept color=blue!10] 	{ node {가정}
+				child 						{ node {Turing Machines} }
+				child 						{ node {Random-Access Machines} }
+				child 						{ node {Random-Access Machines} }
+				child 						{ node {Random-Access Machines} }  };
+		\end{tikzpicture}
+
+
+
+
+	\clearpage
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+
+
+% =================================================================================================== Part 혼화 재료
+
