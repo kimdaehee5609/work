@@ -1,15 +1,13 @@
-# work
+# Work
+
+git clone https://github.com/kimdaehee5609/work.git
+
 
 2022.08.14.토
 
+
 업무
-    교량 점검
-    안전 보건
-    좌표 전개도
-    교량 받침 배치도
-    HCAD
-    
 
-
+git pull
 
 

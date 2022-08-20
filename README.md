@@ -1,7 +1,13 @@
-# music
+# Work
 
-음악 기본 이론 정리
+git clone https://github.com/kimdaehee5609/work.git
+
 
 2022.08.14.토
+
+
+업무
+
+git pull
 
 
